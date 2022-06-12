@@ -1,7 +1,9 @@
-package com.cduvivier.muscu.presentation;
+package com.cduvivier.muscu.exercise.presentation;
 
-import com.cduvivier.muscu.model.Exercise;
-import com.cduvivier.muscu.service.ExerciseService;
+import com.cduvivier.muscu.dto.ExerciseDto;
+import com.cduvivier.muscu.exercise.model.Exercise;
+import com.cduvivier.muscu.exercise.repository.ExerciseDao;
+import com.cduvivier.muscu.exercise.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,22 +21,22 @@ public class ExerciseApi {
     }
 
     @GetMapping()
-    public List<Exercise> getAll() {
+    public List<ExerciseDto> getAll() {
         return this.exerciseService.getAll();
     }
 
     @GetMapping("/{exerciseId}")
-    public Exercise getById(@PathVariable int exerciseId) {
+    public ExerciseDto getById(@PathVariable int exerciseId) {
         return this.exerciseService.getById(exerciseId);
     }
 
     @GetMapping("/sessions/{sessionId}")
-    public List<Exercise> getExercisesBySession(@PathVariable int sessionId) {
-        return this.exerciseService.getExercisesBySession(sessionId);
+    public List<ExerciseDto> getExercisesBySession(@PathVariable int sessionId) {
+        return this.exerciseService.getExercisesBySessionId(sessionId);
     }
 
     @PostMapping()
-    public Exercise create(@RequestBody Exercise exercise) {
+    public ExerciseDto create(@RequestBody Exercise exercise) {
         return this.exerciseService.create(exercise);
     }
 

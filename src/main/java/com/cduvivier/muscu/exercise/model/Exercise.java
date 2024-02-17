@@ -14,7 +14,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "exercise")
+@Entity(name = "exercises")
 public class Exercise {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)

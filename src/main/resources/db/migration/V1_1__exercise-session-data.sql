@@ -1,4 +1,4 @@
-INSERT INTO session (id, name) VALUES (1, 'test-push');
+/*INSERT INTO session (id, name) VALUES (1, 'test-push');
 INSERT INTO session (id, name) VALUES (2, 'test-pull');
 INSERT INTO session (id, name) VALUES (3, 'test-legs');
 
@@ -24,4 +24,4 @@ INSERT INTO exercise_sessions (exercise_id, sessions_id) VALUES (3, 1);
 INSERT INTO exercise_sessions (exercise_id, sessions_id) VALUES (4, 1);
 INSERT INTO exercise_sessions (exercise_id, sessions_id) VALUES (5, 1);
 INSERT INTO exercise_sessions (exercise_id, sessions_id) VALUES (6, 1);
-INSERT INTO exercise_sessions (exercise_id, sessions_id) VALUES (7, 2);
+INSERT INTO exercise_sessions (exercise_id, sessions_id) VALUES (7, 2);*/

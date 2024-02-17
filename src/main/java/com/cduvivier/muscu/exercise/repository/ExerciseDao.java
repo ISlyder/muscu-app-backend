@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface ExerciseDao extends JpaRepository<Exercise, Integer> {
-	@Query("select e from exercise e inner join e.sessions sessions where sessions.id = :sessionId")
+	@Query("select e from exercises e inner join e.sessions sessions where sessions.id = :sessionId")
 	List<Exercise> findAllBySessionsId(@Param("sessionId") int sessionId);
 }

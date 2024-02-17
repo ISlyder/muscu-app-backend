@@ -1,4 +1,4 @@
-CREATE SEQUENCE IF NOT EXISTS hibernate_sequence START WITH 10 INCREMENT BY 1;
+/*CREATE SEQUENCE IF NOT EXISTS hibernate_sequence START WITH 10 INCREMENT BY 1;
 
 CREATE TABLE exercise
 (
@@ -33,6 +33,9 @@ CREATE TABLE "user"
 (
     id   UUID NOT NULL,
     name VARCHAR(255),
+    username VARCHAR(255),
+    password VARCHAR(255),
+    role VARCHAR(20),
     CONSTRAINT pk_user PRIMARY KEY (id)
 );
 
@@ -61,4 +64,4 @@ ALTER TABLE user_session
     ADD CONSTRAINT fk_useses_on_session FOREIGN KEY (session_id) REFERENCES session (id);
 
 ALTER TABLE user_session
-    ADD CONSTRAINT fk_useses_on_user FOREIGN KEY (user_id) REFERENCES "user" (id);
+    ADD CONSTRAINT fk_useses_on_user FOREIGN KEY (user_id) REFERENCES "user" (id);*/

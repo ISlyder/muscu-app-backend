@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "session")
+@Table(name = "sessions")
 public class Session {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)

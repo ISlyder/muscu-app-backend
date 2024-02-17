@@ -1,49 +1,69 @@
 package com.cduvivier.muscu.user.model;
 
 import com.cduvivier.muscu.session.model.Session;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 import java.util.UUID;
 
 @Getter
 @Setter
+@Entity
+@Builder
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "user")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    UUID id;
-    String name;
-    @OneToMany
-    List<Session> session;
+@Table(name = "users")
+@EqualsAndHashCode(of = "id")
+public class User implements UserDetails {
+	@Id
+	@GeneratedValue(generator = "UUID")
+	@GenericGenerator(
+			name = "UUID",
+			strategy = "org.hibernate.id.UUIDGenerator"
+	)
+	private UUID id;
+	@NotBlank
+	@Column(unique = true)
+	private String username;
+	@NotBlank
+	private String password;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id);
-    }
+	@OneToMany
+	private List<Session> session;
 
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
-    }
+	@Enumerated(EnumType.STRING)
+	private Role role;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", session=" + session +
-                '}';
-    }
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return List.of(new SimpleGrantedAuthority(role.name()));
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 }

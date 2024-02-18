@@ -1,7 +1,7 @@
 package com.cduvivier.muscu.security;
 
-import com.cduvivier.muscu.user.service.JwtService;
-import com.cduvivier.muscu.user.service.UserDetailService;
+import com.cduvivier.muscu.service.JwtService;
+import com.cduvivier.muscu.service.UserDetailService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

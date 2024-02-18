@@ -1,9 +1,9 @@
-package com.cduvivier.muscu.user.controller;
+package com.cduvivier.muscu.controller;
 
 import com.cduvivier.muscu.dto.AuthenticationResponse;
 import com.cduvivier.muscu.dto.LoginRequest;
 import com.cduvivier.muscu.dto.RegisterRequest;
-import com.cduvivier.muscu.user.service.AuthenticationService;
+import com.cduvivier.muscu.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

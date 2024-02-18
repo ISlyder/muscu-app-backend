@@ -1,9 +1,9 @@
-package com.cduvivier.muscu.session.service;
+package com.cduvivier.muscu.service;
 
 import com.cduvivier.muscu.dto.SessionDto;
 import com.cduvivier.muscu.factory.SessionFactory;
-import com.cduvivier.muscu.session.model.Session;
-import com.cduvivier.muscu.session.repository.SessionDao;
+import com.cduvivier.muscu.model.Session;
+import com.cduvivier.muscu.repository.SessionDao;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

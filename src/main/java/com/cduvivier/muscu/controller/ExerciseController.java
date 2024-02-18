@@ -1,8 +1,8 @@
-package com.cduvivier.muscu.exercise.presentation;
+package com.cduvivier.muscu.controller;
 
 import com.cduvivier.muscu.dto.ExerciseDto;
-import com.cduvivier.muscu.exercise.model.Exercise;
-import com.cduvivier.muscu.exercise.service.ExerciseService;
+import com.cduvivier.muscu.model.Exercise;
+import com.cduvivier.muscu.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,12 +10,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/exercises")
-public class ExerciseApi {
+public class ExerciseController {
 
 	private final ExerciseService exerciseService;
 
 	@Autowired
-	public ExerciseApi(ExerciseService exerciseService) {
+	public ExerciseController(ExerciseService exerciseService) {
 		this.exerciseService = exerciseService;
 	}
 

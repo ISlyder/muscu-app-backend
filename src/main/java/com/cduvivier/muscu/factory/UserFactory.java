@@ -1,8 +1,8 @@
 package com.cduvivier.muscu.factory;
 
 import com.cduvivier.muscu.dto.RegisterRequest;
-import com.cduvivier.muscu.user.model.Role;
-import com.cduvivier.muscu.user.model.User;
+import com.cduvivier.muscu.model.Role;
+import com.cduvivier.muscu.model.User;
 
 public class UserFactory {
 

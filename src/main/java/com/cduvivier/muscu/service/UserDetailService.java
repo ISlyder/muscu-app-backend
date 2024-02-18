@@ -1,6 +1,6 @@
-package com.cduvivier.muscu.user.service;
+package com.cduvivier.muscu.service;
 
-import com.cduvivier.muscu.user.repository.UserDao;
+import com.cduvivier.muscu.repository.UserDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

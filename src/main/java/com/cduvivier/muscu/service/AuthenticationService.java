@@ -1,10 +1,10 @@
-package com.cduvivier.muscu.user.service;
+package com.cduvivier.muscu.service;
 
 import com.cduvivier.muscu.dto.AuthenticationResponse;
 import com.cduvivier.muscu.dto.LoginRequest;
 import com.cduvivier.muscu.dto.RegisterRequest;
-import com.cduvivier.muscu.user.model.User;
-import com.cduvivier.muscu.user.repository.UserDao;
+import com.cduvivier.muscu.model.User;
+import com.cduvivier.muscu.repository.UserDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

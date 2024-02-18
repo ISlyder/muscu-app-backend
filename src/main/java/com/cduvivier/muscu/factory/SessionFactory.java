@@ -1,7 +1,7 @@
 package com.cduvivier.muscu.factory;
 
 import com.cduvivier.muscu.dto.SessionDto;
-import com.cduvivier.muscu.session.model.Session;
+import com.cduvivier.muscu.model.Session;
 
 public class SessionFactory {
 	public static SessionDto toSessionDto(Session session) {

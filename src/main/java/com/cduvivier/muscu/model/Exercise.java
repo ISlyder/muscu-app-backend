@@ -1,10 +1,6 @@
-package com.cduvivier.muscu.exercise.model;
+package com.cduvivier.muscu.model;
 
-import com.cduvivier.muscu.session.model.Session;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -15,6 +11,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "exercises")
+@EqualsAndHashCode(of = "id")
 public class Exercise {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -25,19 +22,6 @@ public class Exercise {
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "session_id", referencedColumnName = "id")
 	private Set<Session> sessions = new HashSet<>();
-
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		Exercise exercise = (Exercise) o;
-		return id == exercise.id;
-	}
-
-	@Override
-	public int hashCode() {
-		return id;
-	}
 
 	@Override
 	public String toString() {

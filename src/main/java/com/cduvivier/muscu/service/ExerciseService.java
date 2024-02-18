@@ -1,8 +1,8 @@
-package com.cduvivier.muscu.exercise.service;
+package com.cduvivier.muscu.service;
 
 import com.cduvivier.muscu.dto.ExerciseDto;
-import com.cduvivier.muscu.exercise.model.Exercise;
-import com.cduvivier.muscu.exercise.repository.ExerciseDao;
+import com.cduvivier.muscu.model.Exercise;
+import com.cduvivier.muscu.repository.ExerciseDao;
 import com.cduvivier.muscu.factory.ExerciseFactory;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

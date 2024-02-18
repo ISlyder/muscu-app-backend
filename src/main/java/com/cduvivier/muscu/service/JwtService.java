@@ -1,4 +1,4 @@
-package com.cduvivier.muscu.user.service;
+package com.cduvivier.muscu.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

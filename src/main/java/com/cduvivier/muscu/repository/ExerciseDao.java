@@ -1,6 +1,6 @@
-package com.cduvivier.muscu.exercise.repository;
+package com.cduvivier.muscu.repository;
 
-import com.cduvivier.muscu.exercise.model.Exercise;
+import com.cduvivier.muscu.model.Exercise;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

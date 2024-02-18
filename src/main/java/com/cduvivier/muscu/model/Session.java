@@ -1,6 +1,5 @@
-package com.cduvivier.muscu.session.model;
+package com.cduvivier.muscu.model;
 
-import com.cduvivier.muscu.exercise.model.Exercise;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,6 +1,6 @@
 package com.cduvivier.muscu.security;
 
-import com.cduvivier.muscu.user.service.UserDetailService;
+import com.cduvivier.muscu.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

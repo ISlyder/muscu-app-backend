@@ -1,7 +1,7 @@
 package com.cduvivier.muscu.factory;
 
 import com.cduvivier.muscu.dto.ExerciseDto;
-import com.cduvivier.muscu.exercise.model.Exercise;
+import com.cduvivier.muscu.model.Exercise;
 
 public class ExerciseFactory {
 	public static ExerciseDto toExerciseDto(Exercise exercise) {

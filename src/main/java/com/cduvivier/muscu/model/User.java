@@ -1,6 +1,5 @@
-package com.cduvivier.muscu.user.model;
+package com.cduvivier.muscu.model;
 
-import com.cduvivier.muscu.session.model.Session;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.GrantedAuthority;

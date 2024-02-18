@@ -1,6 +1,6 @@
-package com.cduvivier.muscu.user.repository;
+package com.cduvivier.muscu.repository;
 
-import com.cduvivier.muscu.user.model.User;
+import com.cduvivier.muscu.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

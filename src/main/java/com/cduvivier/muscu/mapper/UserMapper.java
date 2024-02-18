@@ -1,13 +1,12 @@
-package com.cduvivier.muscu.factory;
+package com.cduvivier.muscu.mapper;
 
 import com.cduvivier.muscu.dto.RegisterRequest;
 import com.cduvivier.muscu.model.Role;
 import com.cduvivier.muscu.model.User;
+import lombok.NoArgsConstructor;
 
-public class UserFactory {
-
-	private UserFactory() {
-	}
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
+public class UserMapper {
 
 	public static User toUser(RegisterRequest userDto) {
 		return User.builder()

@@ -1,7 +1,7 @@
 package com.cduvivier.muscu.service;
 
 import com.cduvivier.muscu.dto.SessionDto;
-import com.cduvivier.muscu.factory.SessionFactory;
+import com.cduvivier.muscu.mapper.SessionMapper;
 import com.cduvivier.muscu.model.Session;
 import com.cduvivier.muscu.repository.SessionDao;
 import lombok.AllArgsConstructor;
@@ -20,19 +20,19 @@ public class SessionService {
 	public List<SessionDto> findAll() {
 		var sessions = sessionDao.findAll();
 		return sessions.stream()
-				.map(SessionFactory::toSessionDto)
+				.map(SessionMapper::toSessionDto)
 				.collect(Collectors.toList());
 	}
 
 	public SessionDto getSessionById(int sessionId) {
 		var session = sessionDao.findById(sessionId)
 				.orElseThrow(() -> new NoSuchElementException("No session found with id " + sessionId));
-		return SessionFactory.toSessionDto(session);
+		return SessionMapper.toSessionDto(session);
 	}
 
 	public SessionDto create(Session session) {
 		var sessionToSave = sessionDao.save(session);
-		return SessionFactory.toSessionDto(sessionToSave);
+		return SessionMapper.toSessionDto(sessionToSave);
 	}
 
 	public void deleteById(int id) {

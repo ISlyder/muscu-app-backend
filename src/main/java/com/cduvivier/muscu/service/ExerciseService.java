@@ -3,7 +3,7 @@ package com.cduvivier.muscu.service;
 import com.cduvivier.muscu.dto.ExerciseDto;
 import com.cduvivier.muscu.model.Exercise;
 import com.cduvivier.muscu.repository.ExerciseDao;
-import com.cduvivier.muscu.factory.ExerciseFactory;
+import com.cduvivier.muscu.mapper.ExerciseMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,26 +20,26 @@ public class ExerciseService {
 	public List<ExerciseDto> getAll() {
 		var exercises = exerciseDao.findAll();
 		return exercises.stream()
-				.map(ExerciseFactory::toExerciseDto)
+				.map(ExerciseMapper::toExerciseDto)
 				.collect(Collectors.toList());
 	}
 
 	public ExerciseDto getById(int exerciseId) {
 		var exercise = this.exerciseDao.findById(exerciseId)
 				.orElseThrow(() -> new NoSuchElementException("No exercise found with id " + exerciseId));
-		return ExerciseFactory.toExerciseDto(exercise);
+		return ExerciseMapper.toExerciseDto(exercise);
 	}
 
 	public List<ExerciseDto> getExercisesBySessionId(int sessionId) {
 		var exercises = this.exerciseDao.findAllBySessionsId(sessionId);
 		return exercises.stream()
-				.map(ExerciseFactory::toExerciseDto)
+				.map(ExerciseMapper::toExerciseDto)
 				.collect(Collectors.toList());
 	}
 
 	public ExerciseDto create(Exercise exercise) {
 		var exerciseToSave = this.exerciseDao.save(exercise);
-		return ExerciseFactory.toExerciseDto(exerciseToSave);
+		return ExerciseMapper.toExerciseDto(exerciseToSave);
 	}
 
 	public void delete(int id) {

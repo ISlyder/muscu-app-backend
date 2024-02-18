@@ -1,9 +1,11 @@
-package com.cduvivier.muscu.factory;
+package com.cduvivier.muscu.mapper;
 
 import com.cduvivier.muscu.dto.ExerciseDto;
 import com.cduvivier.muscu.model.Exercise;
+import lombok.NoArgsConstructor;
 
-public class ExerciseFactory {
+@NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
+public class ExerciseMapper {
 	public static ExerciseDto toExerciseDto(Exercise exercise) {
 		return ExerciseDto.builder()
 				.id(exercise.getId())

@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.NoSuchElementException;
 
-import static com.cduvivier.muscu.factory.UserFactory.toUser;
+import static com.cduvivier.muscu.mapper.UserMapper.toUser;
 
 @Service
 @RequiredArgsConstructor
